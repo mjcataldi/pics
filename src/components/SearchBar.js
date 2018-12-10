@@ -14,8 +14,9 @@ export default class SearchBar extends Component {
     searchButtonText: "Search"
   };
 
-  onSubmit = event => {
+  onFormSubmit = event => {
     event.preventDefault();
+    console.log(event.target.value);
 
     this.props.onSubmit(this.state.term);
   };
@@ -23,7 +24,7 @@ export default class SearchBar extends Component {
   render() {
     return (
       <div className="ui segment">
-        <form onSubmit={this.onSubmit} className="ui form">
+        <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
             <input
               type="text"
@@ -33,8 +34,6 @@ export default class SearchBar extends Component {
             />
           </div>
         </form>
-        <h2>{this.state.title}</h2>
-        <p>{this.state.term}</p>
       </div>
     );
   }
