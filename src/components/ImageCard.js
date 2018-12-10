@@ -12,7 +12,6 @@ class ImageCard extends Component {
   }
 
   componentDidMount() {
-    // event listener vs. event handler
     this.imageRef.current.addEventListener("load", this.setSpans);
   }
 
